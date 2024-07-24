@@ -1,0 +1,24 @@
+cmake_minimum_required(VERSION 3.10)
+project(cuda_array_addition)
+
+find_package(CUDA REQUIRED)
+
+set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CUDA_STANDARD 11)
+
+# Add source files
+set(SOURCES
+    src/main.cpp
+    src/addition.cu
+)
+
+# Add executable
+add_executable(cuda_array_addition ${SOURCES})
+
+# Link CUDA libraries
+target_link_libraries(cuda_array_addition ${CUDA_LIBRARIES})
+
+# Set CUDA flags
+set_target_properties(cuda_array_addition PROPERTIES
+    CUDA_SEPARABLE_COMPILATION ON
+)

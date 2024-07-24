@@ -1,0 +1,8 @@
+
+#### 5. **Build and Run**
+
+To build and run the project:
+
+1. **Navigate to the Project Directory**:
+   ```bash
+   cd cuda-array-addition
